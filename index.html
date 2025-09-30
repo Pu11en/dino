@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$JUMP Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="game-title">$JUMP</div>
+            <img src="https://res.cloudinary.com/dmdjagtkx/image/upload/v1759196920/defipullen_a_golden_circular_logo_with_a_pixelated_dinosaur_i_fa5c80d1-8c56-467f-aae0-bb101d64f09a_3_s3htze.png" alt="Golden T-Rex Logo" id="dino-logo">
+            <div class="click-text">Click the T-Rex</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="game-container">
+        <div id="score">0</div>
+        <div id="game-over" class="hidden">GAME OVER</div>
+        <div class="character-container">
+            <img id="trex" src="https://res.cloudinary.com/dmdjagtkx/image/upload/v1759197610/Untitled_design_47_gkj7kp.png" alt="Game Character" style="mix-blend-mode: multiply;">
+        </div>
+        <div id="ground"></div>
+    </div>
+        <div class="controls">
+            <button id="start-button">Start Game</button>
+            <p>Press Space to Jump</p>
+        </div>
+    </div>
+    <!-- Audio elements for game sounds -->
+    <audio id="jump-sound" src="https://assets.mixkit.co/active_storage/sfx/2043/2043-preview.mp3" preload="auto"></audio>
+    <audio id="score-sound" src="https://assets.mixkit.co/active_storage/sfx/270/270-preview.mp3" preload="auto"></audio>
+    <audio id="game-over-sound" src="https://assets.mixkit.co/active_storage/sfx/566/566-preview.mp3" preload="auto"></audio>
+    
+    <script src="game.js"></script>
+</body>
+</html>

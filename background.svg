@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <radialGradient id="gold-glow" cx="50%" cy="50%" r="70%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#222222" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#222222"/>
+  <rect width="100%" height="100%" fill="url(#gold-glow)"/>
+  
+  <!-- Gold particles -->
+  <g>
+    <circle cx="100" cy="100" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="200" cy="300" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="300" cy="150" r="4" fill="#ffd700" opacity="0.7"/>
+    <circle cx="450" cy="400" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="600" cy="200" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="700" cy="350" r="4" fill="#ffd700" opacity="0.7"/>
+    <circle cx="800" cy="250" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="900" cy="450" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="150" cy="500" r="4" fill="#ffd700" opacity="0.7"/>
+    <circle cx="250" cy="600" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="350" cy="700" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="500" cy="800" r="4" fill="#ffd700" opacity="0.7"/>
+    <circle cx="650" cy="900" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="750" cy="650" r="2" fill="#ffd700" opacity="0.6"/>
+    <circle cx="850" cy="750" r="4" fill="#ffd700" opacity="0.7"/>
+    <circle cx="950" cy="550" r="3" fill="#ffd700" opacity="0.8"/>
+  </g>
+  
+  <!-- Gold lines -->
+  <g>
+    <line x1="100" y1="0" x2="100" y2="300" stroke="#ffd700" stroke-width="1" opacity="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="500" stroke="#ffd700" stroke-width="2" opacity="0.6"/>
+    <line x1="500" y1="0" x2="500" y2="700" stroke="#ffd700" stroke-width="1" opacity="0.7"/>
+    <line x1="700" y1="0" x2="700" y2="400" stroke="#ffd700" stroke-width="2" opacity="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="600" stroke="#ffd700" stroke-width="1" opacity="0.6"/>
+    <line x1="200" y1="0" x2="200" y2="800" stroke="#ffd700" stroke-width="1" opacity="0.4"/>
+    <line x1="400" y1="0" x2="400" y2="500" stroke="#ffd700" stroke-width="2" opacity="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="900" stroke="#ffd700" stroke-width="1" opacity="0.6"/>
+    <line x1="800" y1="0" x2="800" y2="700" stroke="#ffd700" stroke-width="2" opacity="0.4"/>
+  </g>
+</svg>

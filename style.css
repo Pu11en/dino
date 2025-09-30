@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom, #000, #222);
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.loading-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.click-text {
+    font-size: 24px;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.game-title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 4px 4px 0 #000;
+    margin: 0 0 30px 0;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 5px;
+    transform: scale(1, 1.2);
+    -webkit-text-stroke: 2px #000;
+    position: relative;
+    z-index: 10;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1, 1.2); }
+    to { transform: scale(1.05, 1.25); }
+}
+
+#dino-logo {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-bottom: 0;
+}
+
+#dino-logo:hover {
+    transform: scale(1.05);
+}
+
+.click-text {
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffd700;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    animation: pulse 1.5s infinite;
+    z-index: 1001;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-image: url('background.svg');
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ffd700;
+    overflow: hidden;
+    box-shadow: 0 0 10px #ffd700;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 5px #000;
+}
+
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ffd700;
+}
+
+#trex {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+
+#trex {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px #ffd700);
+    transition: transform 0.1s;
+}
+
+#trex.jumping {
+    animation: rotate 0.5s linear;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ffd700;
+    box-shadow: 0 0 5px #ffd700;
+}
+
+.obstacle {
+    position: absolute;
+    bottom: 0;
+}
+
+.cactus {
+    width: 15px;
+    height: 30px;
+    background-color: #4a9c5d;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #4a9c5d;
+}
+
+.rock {
+    width: 25px;
+    height: 20px;
+    background-color: #a0a0a0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #a0a0a0;
+}
+
+.bird {
+    width: 30px;
+    height: 20px;
+    background-color: #ffd700;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 5px #ffd700;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+#start-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #ffd700;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 5px #ffd700;
+    transition: all 0.3s ease;
+}
+
+#start-button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.gold-particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    box-shadow: 0 0 3px #ffd700;
+    pointer-events: none;
+}
