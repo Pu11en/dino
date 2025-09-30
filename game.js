@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         loadingScreen.style.opacity = '0';
         setTimeout(() => {
             loadingScreen.style.display = 'none';
+            // Show game container after loading screen is dismissed
+            gameContainer.style.display = 'block';
+            document.querySelector('.container').style.display = 'flex';
         }, 500);
     });
     
@@ -68,11 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 50);
     }
     
-    // Generate particles
+    // Generate particles with performance optimization
     function generateParticles() {
         if (isGameOver) return;
-        createParticle();
-        setTimeout(generateParticles, 300);
+        // Limit particles based on device performance
+        if (document.querySelectorAll('div[style*="ffd700"]').length < 15) {
+            createParticle();
+        }
+        setTimeout(generateParticles, 500);
     }
     
     // Jump function with improved physics
@@ -123,13 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Control with spacebar and touch
     function control(e) {
         if (e.keyCode === 32 || e.type === 'touchstart') {
+            e.preventDefault(); // Prevent scrolling on mobile
             if (!isGameOver) jump();
             if (isGameOver) resetGame();
         }
     }
     
     document.addEventListener('keydown', control);
-    document.addEventListener('touchstart', control);
+    gameContainer.addEventListener('touchstart', control);
+    document.addEventListener('touchstart', function(e) {
+        if (e.target === dinoLogo) return; // Allow loading screen click
+        e.preventDefault(); // Prevent default touch behavior
+    }, { passive: false });
     
     // Generate obstacles with variety
     function generateObstacles() {

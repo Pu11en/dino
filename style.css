@@ -23,7 +23,8 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: transparent;
+    background-color: #222;
+    background-image: linear-gradient(to bottom, #000, #222);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,8 +72,10 @@ body {
 }
 
 #dino-logo {
-    width: 100vw;
+    width: 100%;
+    max-width: 1200px;
     height: 100vh;
+    max-height: 80vh;
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -104,21 +107,26 @@ body {
 }
 
 .container {
+    display: none; /* Hide initially until loading screen is dismissed */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 600px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #game-container {
     position: relative;
     width: 100%;
-    height: 200px;
-    background-image: url('background.svg');
-    background-size: cover;
-    background-position: center;
-    border: 1px solid #ffd700;
+    max-width: 1000px;
+    height: 300px;
+    border: 2px solid #ffd700;
     overflow: hidden;
+    background-color: #f7f7f7;
     box-shadow: 0 0 10px #ffd700;
+    display: none; /* Hide initially until loading screen is dismissed */
 }
 
 #score {
@@ -131,15 +139,19 @@ body {
     text-shadow: 0 0 5px #000;
 }
 
+.hidden {
+    display: none !important;
+}
+
 #game-over {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffd700;
-    text-shadow: 0 0 10px #ffd700;
+    font-size: 36px;
+    color: #ff0000;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 10;
 }
 
 #trex {
